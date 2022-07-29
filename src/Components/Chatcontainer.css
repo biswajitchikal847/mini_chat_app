@@ -93,3 +93,8 @@
   .chat_input_send_btn > .MuiSvgIcon-root {
     font-size: 22px;
   } 
+
+  .emoji-picker-react {
+    position: absolute !important;
+    top: -325px;
+  }
