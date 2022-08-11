@@ -17,6 +17,7 @@ const navigate = useNavigate()
                     }
                   navigate('/')
                   setUser(newuser)
+                  localStorage.setItem('user', JSON.stringify(newuser))
                   db.collection('users').doc(result.user.email).set(newuser);
                 })
 

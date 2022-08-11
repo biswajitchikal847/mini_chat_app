@@ -2,11 +2,11 @@ import React from 'react'
 import Sidebar from './Sidebar'
 import './Home.css'
 
-function Home() {
+function Home({currentUser}) {
   return (
     <div className='home'>
         <div className='home_container'>
-            <Sidebar />
+            <Sidebar currentUser={currentUser} />
              <div className="home_bg">
                 <img src="./whatsapp_logo.png" alt="" />
              </div>

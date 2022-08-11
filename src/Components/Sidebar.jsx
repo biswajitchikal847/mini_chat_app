@@ -5,12 +5,12 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SearchIcon from '@mui/icons-material/Search';
 import './Sidebar.css'
 import Userprofile from './Userprofile';
-function Sidebar() {
+function Sidebar({currentUser}) {
   return (
     <div className='sidebar'>
       <div className="sidebar_header">
         <div className="sidebar_header_img">
-            <img src="./userlogo.png" alt="" />
+            <img src={currentUser.photoURL} alt="" />
         </div>
         <div className="sidebar_header_btn">
             <TollIcon />
@@ -27,17 +27,7 @@ function Sidebar() {
       <div className="sidebar_chat_list">
           <Userprofile name="masai student" photourl="./userlogo.png" />
           <Userprofile name="newton student" photourl="./userlogo.png"/>
-          <Userprofile name="Accio student" photourl="./userlogo.png"/>
-          <Userprofile name="Scaler student" photourl="./userlogo.png"/>
-          <Userprofile name="masai student" photourl="./userlogo.png" />
-          <Userprofile name="newton student" photourl="./userlogo.png"/>
-          <Userprofile name="Accio student" photourl="./userlogo.png"/>
-          <Userprofile name="masai student" photourl="./userlogo.png" />
-          <Userprofile name="newton student" photourl="./userlogo.png"/>
-          <Userprofile name="Accio student" photourl="./userlogo.png"/>
-          <Userprofile name="masai student" photourl="./userlogo.png" />
-          <Userprofile name="newton student" photourl="./userlogo.png"/>
-          <Userprofile name="Accio student" photourl="./userlogo.png"/>
+          
     
       </div>
     </div>

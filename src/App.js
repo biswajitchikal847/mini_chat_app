@@ -8,15 +8,16 @@ import { useState } from 'react';
 
 function App() {
 
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+  console.log(user)
 
   return (
     <Router>
       <div className="App">
         {
           user ? ( <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/chatpage" element={<Chatpage />} />
+          <Route path="/" element={<Home currentUser={user} />} />
+          <Route path="/chatpage" element={<Chatpage currentUser={user} />} />
           </Routes>) : <Login setUser={setUser} />
         }
      
