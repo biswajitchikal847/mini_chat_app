@@ -1,7 +1,7 @@
 import React from 'react'
 import './Login.css'
 
-import { auth, googleProvider } from "../Firebase";
+import db,{ auth, googleProvider } from "../Firebase";
 import { useNavigate} from "react-router-dom";
 
 
@@ -17,7 +17,10 @@ const navigate = useNavigate()
                     }
                   navigate('/')
                   setUser(newuser)
+                  db.collection('users').doc(result.user.email).set(newuser);
                 })
+
+                .catch((err) => alert(err.message))
         }
 
 
@@ -29,7 +32,7 @@ const navigate = useNavigate()
                     <p className="login_name">
                         Whats App Web
                     </p>
-                    <button className='login_btn'>
+                    <button className='login_btn' onClick={signInWithGoogle}>
                         <img src="./googleLogo.png" alt="login with google" />
                         Login with Google
                     </button>
