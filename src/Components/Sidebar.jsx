@@ -5,12 +5,13 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SearchIcon from '@mui/icons-material/Search';
 import './Sidebar.css'
 import Userprofile from './Userprofile';
-function Sidebar({currentUser}) {
+function Sidebar({currentUser, signOut}) {
+  console.log(currentUser.photoURL)
   return (
     <div className='sidebar'>
       <div className="sidebar_header">
-        <div className="sidebar_header_img">
-            <img src={currentUser.photoURL} alt="" />
+        <div className="sidebar_header_img" onClick={signOut}>
+            <img src={currentUser.photoURL} alt="profile" />
         </div>
         <div className="sidebar_header_btn">
             <TollIcon />
